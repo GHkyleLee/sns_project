@@ -33,6 +33,12 @@ public class Member {
         this.createdAt = createdAt == null ? LocalDateTime.now() : createdAt;
     }
 
+    public void changeNickname(String other){
+        Objects.requireNonNull(other);
+        validateNickname(other);
+        nickname = other;
+    }
+
     void validateNickname(String nickname){
         /*
         닉네임 확인
