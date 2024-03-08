@@ -39,7 +39,8 @@ public class Member {
         nickname = other;
     }
 
-    void validateNickname(String nickname){
+
+    private void validateNickname(String nickname){
         /*
         닉네임 확인
          */

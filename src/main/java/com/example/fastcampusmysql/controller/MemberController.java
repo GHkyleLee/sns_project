@@ -22,7 +22,7 @@ public class MemberController {
     @PostMapping("/members")
     public MemberDto register(@RequestBody RegistorMemberCommand command){
 
-        var member =  memberWriteService.create(command);
+        var member =  memberWriteService.register(command);
 
         return memberReadService.toDto(member);
     }

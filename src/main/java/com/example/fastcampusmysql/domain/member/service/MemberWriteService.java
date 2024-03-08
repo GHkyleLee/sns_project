@@ -11,7 +11,7 @@ public class MemberWriteService {
 
     final private MemberRepository memberRepository;
 
-    public Member create(RegistorMemberCommand command){
+    public Member register(RegistorMemberCommand command){
         /*
             목표 - 회원정보(이메일, 닉네임, 생년월일)를 등록한다.
             닉네임은 10자를 넘길수 없다.
