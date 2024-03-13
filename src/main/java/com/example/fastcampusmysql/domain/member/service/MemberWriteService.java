@@ -30,4 +30,16 @@ public class MemberWriteService {
 
     }
 
+    public void changNickname(Long memberId, String nickName) {
+        /*
+            1. 회원의 이름을 변경한다
+            2. 변경내역을 저장한다.
+         */
+
+        var member = memberRepository.findbyId(memberId).orElseThrow();
+        member.changeNickname(nickName);
+        memberRepository.save(member);
+        // TODO: 변경내역 히스토리르 저장한다.
+    }
+
 }
