@@ -6,7 +6,7 @@ import java.time.LocalDateTime;
 import java.util.Objects;
 
 @Getter
-public class Foloow {
+public class Follow {
     final private Long id;
 
     final private Long formMemberId;
@@ -15,7 +15,7 @@ public class Foloow {
 
     final private LocalDateTime createdAt;
 
-    public Foloow(Long id, Long formMemberId, Long toMemberId, LocalDateTime createdAt) {
+    public Follow(Long id, Long formMemberId, Long toMemberId, LocalDateTime createdAt) {
         this.id = id;
         this.formMemberId = Objects.requireNonNull(formMemberId);
         this.toMemberId = Objects.requireNonNull(toMemberId);
