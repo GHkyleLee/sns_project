@@ -7,7 +7,6 @@ import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.namedparam.SqlParameterSource;
-import org.springframework.jdbc.core.simple.SimpleJdbcCall;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import org.springframework.stereotype.Repository;
 
@@ -61,7 +60,6 @@ public class MemberRepository {
             return insert(member);
         }
 
-
         return update(member);
     }
 
@@ -70,7 +68,7 @@ public class MemberRepository {
          멤버 생성
          */
         SimpleJdbcInsert simpleJdbcInsert = new SimpleJdbcInsert(namedParameterJdbcTemplate.getJdbcTemplate())
-                .withTableName("Member")
+                .withTableName(TABLE)
                 .usingGeneratedKeyColumns("id");
         SqlParameterSource params = new BeanPropertySqlParameterSource(member);
 
