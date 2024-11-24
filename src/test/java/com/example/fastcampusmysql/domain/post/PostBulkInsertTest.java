@@ -16,8 +16,6 @@ import java.util.stream.IntStream;
 @TestPropertySource(properties = {
         "spring.datasource.url=ENC(VZhejcju4bUHjZ8hBjjMBig/npOZ46sW/YZFhca4rDt21rlpc+wkGcKrTxe1c4+Jii1Q4d+t1yDVBAPtXsIi7b6rmGVtW/3sZBtt1oS/4iXNzlsWqGyqOSkrs8UUX0bnh0DdMWs2H+3LQ61cnPe+gwM/oc8kMxoRjfK9kEgmzgd+8ggs/ETGSwYl5tLMm6BYNPQMDi633VKNuVFZZ0+lNdBxNHv0SniZ4088MeybQjsj7zKEtUi7jtucU9zV5K3O)",
         "spring.datasource.username=ENC(bor7u0DMJb9EfFcAJrfoiw==)",
-        "spring.datasource.password=ENC(K6Z/rcw/nMF/I5tcTJnSHxYocDIK1RW/)",
-        "jasypt.encryptor.key=ghlee1215",
         "jasypt.encryptor.bean=jasyptEncryptor"
 })
 public class PostBulkInsertTest {

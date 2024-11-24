@@ -75,7 +75,6 @@ public class PostRepository {
                 ORDER BY %s
                 LIMIT :size
                 OFFSET :offset
-               
                 """, TABLE, PageHelper.orderBy(pageable.getSort()));
 
         var posts = namedParameterJdbcTemplate.query(sql, params, ROW_MAPPER);
