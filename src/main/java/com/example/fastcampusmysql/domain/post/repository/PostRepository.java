@@ -52,7 +52,7 @@ public class PostRepository {
                 FROM %s
                 WHERE memberId = :memberId
                   AND createdDate BETWEEN :firstDate and :lastDate
-                GROUP BY memberId, createdDate  
+                GROUP BY memberId, createdDate 
                 """,TABLE);
         var params = new BeanPropertySqlParameterSource(request);
         return namedParameterJdbcTemplate.query(sql, params, DAILY_POST_COUNT_ROW_MAPPER);
@@ -77,11 +77,12 @@ public class PostRepository {
                 OFFSET :offset
                
                 """, TABLE, PageHelper.orderBy(pageable.getSort()));
+
         var posts = namedParameterJdbcTemplate.query(sql, params, ROW_MAPPER);
 
 
-        return new PageImpl(posts, pageable, getCount(memberId));
-    };
+        return new PageImpl<>(posts, pageable, getCount(memberId));
+    }
 
     private Long getCount(Long memberId){
         var sql = String.format("""
