@@ -52,7 +52,7 @@ public class PostRepository {
                 FROM %s
                 WHERE memberId = :memberId
                   AND createdDate BETWEEN :firstDate and :lastDate
-                GROUP BY memberId, createdDate 
+                GROUP BY memberId, createdDate
                 """,TABLE);
         var params = new BeanPropertySqlParameterSource(request);
         return namedParameterJdbcTemplate.query(sql, params, DAILY_POST_COUNT_ROW_MAPPER);
