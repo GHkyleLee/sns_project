@@ -23,26 +23,37 @@ public class MemberController {
 
     @PostMapping("/members")
     public MemberDto register(@RequestBody RegistorMemberCommand command){
+        /*
+        *  멤버 등록
+        * */
 
         var member =  memberWriteService.register(command);
 
         return memberReadService.toDto(member);
     }
 
-    @GetMapping("/members/{id}®")
+    @GetMapping("/members/{id}")
     public MemberDto getMember(@PathVariable long id){
+        /*
+        *  멤버 조회
+        * */
         return memberReadService.getMember(id);
 
     }
 
     @PostMapping("/{id}/name")
     public MemberDto changeNickName(@PathVariable Long id, @RequestBody String nickname) {
-
+        /*
+        *  멤버 닉네임 변경
+        * */
         memberWriteService.changNickname(id, nickname);
         return memberReadService.getMember(id);
     }
     @GetMapping("{memberId}/member-historys")
     public List<MemberNicknameHistoryDto> getNicknameHistory (@PathVariable Long memberId ){
+        /*
+        *  멤버 닉네임 히스토리 조회
+        * */
         return memberReadService.getNicknameHistory(memberId);
     }
 }

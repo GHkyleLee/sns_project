@@ -8,7 +8,9 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 @Service
 public class CreateFolloweMemberUsecase {
-    
+    /*
+    *  팔로우 등록
+    * */
     final private MemberReadService memberReadService;
 
     final private FollowWriteService followWriteService;
